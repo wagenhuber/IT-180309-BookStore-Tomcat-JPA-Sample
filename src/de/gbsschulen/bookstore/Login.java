@@ -1,37 +1,65 @@
 package de.gbsschulen.bookstore;
 
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-public class Login extends HttpServlet{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.util.Objects;
 
-    private LoginService loginService = new LoginService();
+@Entity
+public class Login {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
+    @Id
+    @GeneratedValue
+    private int id;
+    private String loginname;
+    private String password;
 
+
+    public Login() {
+    }
+
+    public Login(String loginname, String password) {
+        this.loginname = loginname;
+        this.password = password;
+    }
+
+    public String getLoginname() {
+        return loginname;
+    }
+
+    public void setLoginname(String loginname) {
+        this.loginname = loginname;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String loginname = req.getParameter("loginname");
-        String password = req.getParameter("password");
-        System.out.println(loginname);
-        System.out.println(password);
-        if (loginService.checkPassword(loginname, password)) {
-            req.setAttribute("loginname", loginname);
-            req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req, resp);
-        } else {
-            req.setAttribute("error", "Login war falsch!");
-            req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Login login = (Login) o;
+        return Objects.equals(loginname, login.loginname) &&
+                Objects.equals(password, login.password);
+    }
 
-        }
+    @Override
+    public int hashCode() {
 
+        return Objects.hash(loginname, password);
+    }
 
+    @Override
+    public String toString() {
+        return "Login{" +
+                "loginname='" + loginname + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
