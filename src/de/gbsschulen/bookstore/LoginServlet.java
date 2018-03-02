@@ -25,7 +25,12 @@ public class LoginServlet extends HttpServlet{
         System.out.println(password);
         if (loginService.checkPassword(loginname, password)) {
             req.setAttribute("loginname", loginname);
+
+
+            //loginService.saveLogin(new Login(loginname,password));
+
             req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req, resp);
+
         } else {
             req.setAttribute("error", "LoginServlet war falsch!");
             req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
