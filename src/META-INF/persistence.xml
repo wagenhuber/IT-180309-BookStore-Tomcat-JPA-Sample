@@ -4,7 +4,8 @@
     <persistence-unit name="bookstore">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
-        <class>de.gbsschulen.bookstore.Login</class>
+        <class>de.gbsschulen.bookstore.login.User</class>
+        <class>de.gbsschulen.bookstore.book.Book</class>
 
         <properties>
             <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/bookstore"/>

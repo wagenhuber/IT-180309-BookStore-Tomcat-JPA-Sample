@@ -1,14 +1,11 @@
-package de.gbsschulen.bookstore;
+package de.gbsschulen.bookstore.login;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Login {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,10 +14,10 @@ public class Login {
     private String password;
 
 
-    public Login() {
+    public User() {
     }
 
-    public Login(String loginname, String password) {
+    public User(String loginname, String password) {
         this.loginname = loginname;
         this.password = password;
     }
@@ -45,7 +42,7 @@ public class Login {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Login login = (Login) o;
+        User login = (User) o;
         return Objects.equals(loginname, login.loginname) &&
                 Objects.equals(password, login.password);
     }
@@ -58,7 +55,7 @@ public class Login {
 
     @Override
     public String toString() {
-        return "Login{" +
+        return "User{" +
                 "loginname='" + loginname + '\'' +
                 ", password='" + password + '\'' +
                 '}';

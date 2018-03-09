@@ -20,5 +20,9 @@
     <input type="submit" value="Einloggen"/>
 </form>
 
+
+<a href="/registrieren">Register</a>
+
+
 </body>
 </html>
