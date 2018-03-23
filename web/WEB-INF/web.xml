@@ -4,17 +4,32 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <welcome-file-list>
-        <welcome-file>einloggen.do</welcome-file>
+        <welcome-file>einloggen</welcome-file>
     </welcome-file-list>
 
+
+    <!--Ersetzt Anutation @WebServlet im Servlet!!!  -->
     <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>de.gbsschulen.bookstore.login.LoginServlet</servlet-class>
     </servlet>
 
+
+    <servlet>
+        <servlet-name>ListsBook</servlet-name>
+        <servlet-class>de.gbsschulen.bookstore.book.ListsBookServlet</servlet-class>
+    </servlet>
+
+
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
-        <url-pattern>/einloggen.do</url-pattern>
+        <url-pattern>/einloggen</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>ListsBook</servlet-name>
+        <url-pattern>/listsBooks.do</url-pattern>
     </servlet-mapping>
 
 </web-app>

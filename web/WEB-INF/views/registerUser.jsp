@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<form method="post" action="/registrieren">
+<form method="post" action="registrieren">
     Benutzername:<input type="text" name="username">
     Passwort:<input type="password" name="password">
     <input type="submit" value="registrieren">
