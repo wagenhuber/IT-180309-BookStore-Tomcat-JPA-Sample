@@ -10,8 +10,8 @@
 
     <!--Ersetzt Anutation @WebServlet im Servlet!!! Man kann selbst wählen, ob Eintrag in Web.xml oder Annutation im Servlet. Ein Mischung aus beiden ist auch möglich! -->
     <servlet>
-        <servlet-name>Login</servlet-name>
-        <servlet-class>de.gbsschulen.bookstore.login.LoginServlet</servlet-class>
+        <servlet-name>Login</servlet-name> <!--Servlet-Name-->
+        <servlet-class>de.gbsschulen.bookstore.login.LoginServlet</servlet-class> <!--Vollqualifizierter Klassenname-->
     </servlet>
 
 

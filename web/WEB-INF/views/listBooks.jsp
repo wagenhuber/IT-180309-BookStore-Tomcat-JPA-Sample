@@ -24,6 +24,7 @@
     </c:forEach>
 </table>
 
+<a href="addBooks.do">Neues Buch hinzufügen</a>
 
 
 

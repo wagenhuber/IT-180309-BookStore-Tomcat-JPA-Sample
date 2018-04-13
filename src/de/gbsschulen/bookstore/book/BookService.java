@@ -49,6 +49,8 @@ public class BookService {
 
 
 
+
+
     public List<String> readAllAuthors() {
         TypedQuery<String> query = entityManager.createQuery("select DISTINCT b.Author from Book b", String.class);
         return query.getResultList();
