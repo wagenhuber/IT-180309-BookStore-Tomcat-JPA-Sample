@@ -8,7 +8,7 @@
     </welcome-file-list>
 
 
-    <!--Ersetzt Anutation @WebServlet im Servlet!!!  -->
+    <!--Ersetzt Anutation @WebServlet im Servlet!!! Man kann selbst wählen, ob Eintrag in Web.xml oder Annutation im Servlet. Ein Mischung aus beiden ist auch möglich! -->
     <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>de.gbsschulen.bookstore.login.LoginServlet</servlet-class>

@@ -19,6 +19,7 @@
             <td>${book.isbn}</td>
             <td>${book.titel}</td>
             <td>${book.author}</td>
+            <td><a href="deleteBooks.do?id=${book.id}">Löschen</a></td>
         </tr>
     </c:forEach>
 </table>
