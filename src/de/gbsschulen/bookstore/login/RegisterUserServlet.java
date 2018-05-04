@@ -1,5 +1,6 @@
 package de.gbsschulen.bookstore.login;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +12,8 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/registrieren")
 public class RegisterUserServlet extends HttpServlet{
 
-    private LoginService loginService = new LoginService();
+    @Inject
+    private LoginService loginService;
 
 
     @Override
@@ -20,13 +22,12 @@ public class RegisterUserServlet extends HttpServlet{
 
     }
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         loginService.saveLogin(new User(username,password));
-        resp.sendRedirect("/einloggen.do");
+        resp.sendRedirect("/einloggen");
     }
 
 

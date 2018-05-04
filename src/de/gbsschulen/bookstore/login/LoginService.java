@@ -1,15 +1,20 @@
 package de.gbsschulen.bookstore.login;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+@ApplicationScoped //Gültigkeitsbereich für CDI => nur ein Objekt von LoginService für ganze Anwendung/alle Sessions
 public class LoginService {
+
 
     private EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
+
 
     public LoginService() {
         entityManagerFactory = Persistence.createEntityManagerFactory("bookstore");

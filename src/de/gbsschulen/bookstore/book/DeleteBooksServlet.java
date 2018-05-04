@@ -1,5 +1,6 @@
 package de.gbsschulen.bookstore.book;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +11,8 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/deleteBooks.do")
 public class DeleteBooksServlet extends HttpServlet {
 
-    private BookService bookService = new BookService();
+    @Inject
+    private BookService bookService;
 
 
     @Override

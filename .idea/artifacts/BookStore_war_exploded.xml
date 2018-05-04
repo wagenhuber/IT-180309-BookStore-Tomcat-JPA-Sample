@@ -11,6 +11,7 @@
           <element id="library" level="project" name="org.eclipse.persistence:eclipselink:2.5.0" />
           <element id="library" level="project" name="mysql:mysql-connector-java:5.1.45" />
           <element id="library" level="project" name="jstl:jstl:1.2" />
+          <element id="library" level="project" name="org.jboss.weld.servlet:weld-servlet:2.4.6.Final" />
         </element>
       </element>
     </root>

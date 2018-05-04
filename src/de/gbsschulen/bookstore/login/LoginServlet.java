@@ -1,5 +1,6 @@
 package de.gbsschulen.bookstore.login;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +9,8 @@ import java.io.IOException;
 
 public class LoginServlet extends HttpServlet{
 
-    private LoginService loginService = new LoginService();
+    @Inject
+    private LoginService loginService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

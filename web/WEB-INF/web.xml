@@ -23,7 +23,7 @@
 
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
-        <url-pattern>/einloggen</url-pattern>
+        <url-pattern>/einloggen</url-pattern> <!--Achtung: ".do" weggelassen, damit der Filter für das Einloggen umgangen wird-->
     </servlet-mapping>
 
 
